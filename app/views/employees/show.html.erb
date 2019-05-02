@@ -1,0 +1,15 @@
+<h2>Say hello to my lil' Employee!</h2><br>
+
+<strong>Employee picture:</strong><br>
+<%= image_tag('employee_pics/chronic-snoop.jpg', width: '500px', height: '250px') %><br><br>
+<strong>Name: <%= @employee.to_s %></strong><br><br>
+<strong>Title: <%= @employee.title %></strong><br><br>
+<strong>Alias: <%= @employee.alias %></strong><br><br>
+<strong>Office: <%= @employee.office %></strong><br><br>
+<strong>Dog: <%=link_to @dog.name, dog_path(@employee.dog_id) %></strong><br><br>
+<hr />
+<p>
+<%= link_to "Edit", edit_employee_path(@employee) %> |
+<%= link_to "Delete", employee_path(@employee), data: {confirm: "Are you sure?"}, method: :delete %><br>
+<%= link_to "All Employees", employees_path %>
+</p>
